@@ -154,7 +154,7 @@ def _text_detect(img, image, join=False):
         bounding_boxes = np.vstack((bounding_boxes,
                                     np.array([x, y, x+w, y+h])))
         
-    implt(small, t='Bounding rectangles')
+    # implt(small, t='Bounding rectangles')
     
     boxes = bounding_boxes.dot(ratio(image, small.shape[0])).astype(np.int64)
     return boxes[1:]  
@@ -195,7 +195,7 @@ def textDetectWatershed(thresh):
     markers[unknown == 255] = 0
     
     markers = cv2.watershed(img, markers)
-    implt(markers, t='Markers')
+    # implt(markers, t='Markers')
     image = img.copy()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
@@ -224,4 +224,4 @@ def textDetectWatershed(thresh):
         if r > 0.2 and 2000 > w > 15 and 1500 > h > 15:
             cv2.rectangle(image, (x, y),(x+w,y+h), (0, 255, 0), 2)
         
-    implt(image)
+    # implt(image)
