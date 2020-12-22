@@ -28,6 +28,7 @@ for line in lines:
         # print(i)
         save.save("segmented/segment" + str(i) + ".png")
         i += 1
+print(f"{i} segmented words are saved to word_segmentation/segmented directory")
 
 
 
